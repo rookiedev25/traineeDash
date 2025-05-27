@@ -54,7 +54,6 @@ function alertToastMessage(message) {
         toast.remove();
     }, 3000);
 }
-
 function basicValidation(nameInput, emailInput) {
   // Check if name input is empty
   if (nameInput.value.trim() === "") {
@@ -66,8 +65,12 @@ function basicValidation(nameInput, emailInput) {
   }
   //email validation here:
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailPattern.test(emailInput.value)) {
-    alertToastMessage("Please enter a valid email address.");
+
+
+  
+// Only allow emails ending with @siemens.com
+if (!emailPattern.test(emailInput.value) || !emailInput.value.endsWith("@siemens.com")) {
+    alertToastMessage("Please enter your siemens email address.");
     return false;
   }
   return true;
