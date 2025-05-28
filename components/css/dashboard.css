@@ -4,14 +4,14 @@
     --color-accent: #10b981;
 
     --dashboard-nav: black;
-    --dashboard-search-btn: #4361ee;
-    --dashboard-search-btn-hover: #3b5bdc;
+    --dashboard-search-btn: #2584ff;
+    --dashboard-search-btn-hover: #1e6acf;
     --dashboard-search-input: #f0f0f0;
     --dashboard-search-input-hover: #e0e0e0;
     --dashboard-search-input-focus: #d0d0d0;
     --dashboard-search-input-border: #c0c0c0;
-    --dashboard-links: #4361ee;
-    --dashboard-links-hover: #3b5bdc;
+    --dashboard-links: #2584ff;
+    --dashboard-links-hover: #1e6acf; 
 
     --color-bg-light: #f9fafb;
     --color-bg-dark: #111827;
@@ -47,4 +47,64 @@ main {
     padding: 0;
     display: flex;
     flex-direction: row;
+}
+
+.milestoneCardContainer{
+    /* border: 2px solid black; */
+    height: 25vh;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+
+}
+.milestoneCard{
+    height: 100%;
+    width: 35%;
+    border: 1px solid var(--dashboard-links);
+    border-radius: 8px;
+}
+.milestoneCardInfo{
+    display: flex;
+    flex-direction: column;
+}
+.milestoneCardInfo h2{
+/* color properties */
+display: block;
+width: 100%;
+text-align: center;
+padding-top: 5px;
+}
+.milestoneCardInfo ul{
+    list-style: none;
+    padding: 10px;
+}
+.milestoneCardProgress{
+    padding: 10px;
+    border-top: 1px solid #999;
+}
+.progressBar{
+    border: 1px solid black;
+    border-radius: 13px;
+}
+.progressBarFill{
+    border: 4px solid green;
+    width: 75%;
+    border-radius: 10px;
+}
+
+
+
+.annoucementCardContainer{
+    margin-top: 20px;
+    border: 2px solid blue;
+    height: 40vh;
+    background-color: pink;
+}
+.annoucementCard2{
+    overflow: hidden;
+}
+.annoucementCardInfo{
+    border: 2px solid green;
+
 }

@@ -4,14 +4,14 @@
     --color-accent: #10b981;
 
     --dashboard-nav: black;
-    --dashboard-search-btn: #4361ee;
-    --dashboard-search-btn-hover: #3b5bdc;
+    --dashboard-search-btn: #2584ff;
+    --dashboard-search-btn-hover: #1e6acf;
     --dashboard-search-input: #f0f0f0;
     --dashboard-search-input-hover: #e0e0e0;
     --dashboard-search-input-focus: #d0d0d0;
     --dashboard-search-input-border: #c0c0c0;
-    --dashboard-links: #4361ee;
-    --dashboard-links-hover: #3b5bdc;
+    --dashboard-links: #2584ff;
+    --dashboard-links-hover: #1e6acf; 
 
     --color-bg-light: #f9fafb;
     --color-bg-dark: #111827;
@@ -62,7 +62,7 @@ aside {
     min-height: 87vh;
     font-size: 1.2rem;
     background-color: var(--color-bg-light);
-    color: var(--color-text-primary);
+    color: var(--dashboard-links);
     transition: width 0.3s, height 0.3s;
     /* overflow-x: hidden; */
     border-right: 1px solid var(--color-border);
