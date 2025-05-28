@@ -29,30 +29,30 @@ function toastMessage(message) {
     toast.remove();
   }, 3000);
 }
-// generate an alert toast message when problem is with input fields/validation 
+// generate an alert toast message when problem is with input fields/validation
 function alertToastMessage(message) {
-    const toast = document.createElement("div");
-    toast.textContent = message;
-    toast.style.position = "fixed";
-    toast.style.top = "30px";
-    toast.style.right = "30px";
-    toast.style.background = "#e74c3c"; // red background for alert
-    toast.style.color = "#fff";
-    toast.style.padding = "16px 32px";
-    toast.style.borderRadius = "8px";
-    toast.style.boxShadow = "0 4px 16px rgba(0,0,0,0.15)";
-    toast.style.fontSize = "1rem";
-    toast.style.fontFamily = "system-ui, sans-serif";
-    toast.style.zIndex = "9999";
-    toast.style.letterSpacing = "0.02em";
-    toast.style.transition = "opacity 0.3s";
-    toast.style.opacity = "1";
-    toast.style.border = "1px solid #c0392b";
-    document.body.appendChild(toast);
+  const toast = document.createElement("div");
+  toast.textContent = message;
+  toast.style.position = "fixed";
+  toast.style.top = "30px";
+  toast.style.right = "30px";
+  toast.style.background = "#e74c3c"; // red background for alert
+  toast.style.color = "#fff";
+  toast.style.padding = "16px 32px";
+  toast.style.borderRadius = "8px";
+  toast.style.boxShadow = "0 4px 16px rgba(0,0,0,0.15)";
+  toast.style.fontSize = "1rem";
+  toast.style.fontFamily = "system-ui, sans-serif";
+  toast.style.zIndex = "9999";
+  toast.style.letterSpacing = "0.02em";
+  toast.style.transition = "opacity 0.3s";
+  toast.style.opacity = "1";
+  toast.style.border = "1px solid #c0392b";
+  document.body.appendChild(toast);
 
-    setTimeout(function () {
-        toast.remove();
-    }, 3000);
+  setTimeout(function () {
+    toast.remove();
+  }, 3000);
 }
 function basicValidation(nameInput, emailInput) {
   // Check if name input is empty
@@ -63,13 +63,36 @@ function basicValidation(nameInput, emailInput) {
     alertToastMessage("Email is required.");
     return false;
   }
+  // input name validation here:
+  const namePattern = /^[a-zA-Z\s]+$/; // allows only letters and spaces
+  if (!namePattern.test(nameInput.value)) {
+    alertToastMessage("Please enter a valid name (letters and spaces only).");
+    return false;
+  }
+
   //email validation here:
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  // Array of valid emails allowed to login
+  const validEmails = [
+    "gouranga.bhattacherjee@siemens.com",
+    "yaswanth.sudhi@siemens.com",
+    "user@siemens.com",
+    // Add more valid emails as needed
+  ];
 
-  
-// Only allow emails ending with @siemens.com
-if (!emailPattern.test(emailInput.value) || !emailInput.value.endsWith("@siemens.com")) {
+  // Check if the entered email is in the list of valid emails
+  if (!validEmails.includes(emailInput.value.trim())) {
+    alertToastMessage("This email is not authorized to login.");
+    return false;
+  }
+  // Check if email input is valid
+
+  // Only allow emails ending with @siemens.com
+  if (
+    !emailPattern.test(emailInput.value) ||
+    !emailInput.value.endsWith("@siemens.com")
+  ) {
     alertToastMessage("Please enter your siemens email address.");
     return false;
   }
@@ -80,15 +103,15 @@ if (!emailPattern.test(emailInput.value) || !emailInput.value.endsWith("@siemens
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault(); // prevent form submission
   if (basicValidation(nameInput, emailInput)) {
-
     // sending data to the server or processing it can be done here
     // For demonstration, we will just log the values to the console
-    
 
     // If validation passes, show toast message
     toastMessage("Login successful! Welcome, " + nameInput.value + ".");
     loginForm.reset(); // reset the form
+    // Redirect to the dashboard page after successful login
+    // Ensure dashboard.html exists in the same directory as the current page
+    window.location.assign("dashboard.html");
+    
   }
 });
-
-
