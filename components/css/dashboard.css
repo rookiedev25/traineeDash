@@ -33,6 +33,7 @@
 }
 
 body {
+    max-width: 1440px;
     background-color: var(--color-bg-light);
     font-family: var(--font-family);
     font-size: 16px;
@@ -47,33 +48,48 @@ main {
     padding: 0;
     display: flex;
     flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .milestoneCardContainer{
     /* border: 2px solid black; */
+    border-bottom: 1px solid;
     height: 25vh;
     margin-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
-
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+.milestoneCardContainer > * {
+    flex: 0 0 auto;
 }
 .milestoneCard{
     height: 100%;
     width: 35%;
+    min-width: 250px;
+    max-width: 400px;
     border: 1px solid var(--dashboard-links);
     border-radius: 8px;
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
 }
 .milestoneCardInfo{
     display: flex;
     flex-direction: column;
 }
 .milestoneCardInfo h2{
-/* color properties */
-display: block;
-width: 100%;
-text-align: center;
-padding-top: 5px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
 }
 .milestoneCardInfo ul{
     list-style: none;
@@ -93,18 +109,147 @@ padding-top: 5px;
     border-radius: 10px;
 }
 
-
-
 .annoucementCardContainer{
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
-    border: 2px solid blue;
     height: 40vh;
-    background-color: pink;
+    overflow: auto;
+    gap: 2rem;
+    width: 100%;
 }
-.annoucementCard2{
-    overflow: hidden;
+.annoucementCard1, .annoucementCard2{
+    height: 100%;
+    width: 100%;
+    min-width: 200px;
+    border: 1px solid var(--dashboard-links);
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 .annoucementCardInfo{
-    border: 2px solid green;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.annoucementCardButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 10px;
+}
+.annoucementCardButtons button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--dashboard-links);
+    color: white;
+    cursor: pointer;
+}
+.annoucementCardButtons button:hover{
+    background-color: var(--dashboard-links-hover);
+}
 
+/* Responsive styles */
+@media (max-width: 1440px) {
+    .dashboardContainer {
+        /* Keep flex-direction: row on all screens */
+        flex-direction: row;
+        gap: 1.5rem;
+    }
+
+    .milestoneCardContainer {
+        height: auto;
+        flex-direction: row;
+        gap: 1rem;
+        overflow-x: auto;
+        overflow-y: visible;
+    }
+
+    .milestoneCard {
+        min-width: 0;
+        max-width: 20%;
+        margin-bottom: 1rem;
+    }
+
+    .annoucementCardContainer {
+        height: auto;
+    }
+}
+@media (max-width: 1024px) {
+    .dashboardContainer {
+            flex-direction: row;
+            gap: 1.5rem;
+            flex-wrap: nowrap;
+        }
+    
+        .milestoneCardContainer {
+            height: auto;
+            flex-direction: row;
+            gap: 1rem;
+            overflow-x: auto;
+            overflow-y: visible;
+        }
+    
+        .milestoneCard {
+            min-width: 0;
+            max-width: 20%;
+            margin-bottom: 1rem;
+        }
+    
+        .annoucementCardContainer {
+            height: auto;
+        }
+}
+
+@media (max-width: 768px) {
+    .dashboardContainer {
+        /* Keep flex-direction: row on all screens */
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .milestoneCardContainer {
+        flex-direction: column;
+        gap: 1rem;
+        height: auto;
+    }
+    .milestoneCard {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+    .annoucementCardContainer {
+        gap: 1rem;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboardContainer {
+        /* Keep flex-direction: row on all screens */
+        flex-direction: row;
+        padding: 0 5px;
+    }
+    .milestoneCardContainer {
+        gap: 0.5rem;
+        padding: 0;
+    }
+    .milestoneCard {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        font-size: 14px;
+    }
+    .annoucementCard1, .annoucementCard2 {
+        padding: 6px;
+        font-size: 14px;
+    }
+    .annoucementCardButtons button {
+        padding: 4px 8px;
+        font-size: 13px;
+    }
 }
