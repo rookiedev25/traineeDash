@@ -1,0 +1,189 @@
+:root {
+    --color-primary: #0071e3;
+    --color-primary-hover: #005bb5;
+    --color-accent: #10b981;
+
+    --color-bg: #f9f9f9;
+    --color-bg-dark: #1c1c1e;
+    --color-surface: #ffffff;
+
+    --color-text-primary: #1d1d1f;
+    --color-text-secondary: #6e6e73;
+
+    --color-border: #d2d2d7;
+    --color-error: #ff3b30;
+
+    --font-family: "SF Pro Display", "Poppins", sans-serif;
+
+    --radius: 20px;
+    --shadow-light: 0 8px 24px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header/Navbar */
+header {
+    background-color: var(--color-bg-dark);
+    color: white;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBarContainer p {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    text-align: center;
+    padding: 0.2rem;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--color-bg);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    font-weight: 600;
+}
+
+/* Hero Section */
+.heroContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* padding: 3rem 2rem; */
+    /* height: 30vh; */
+    background-image: url("../img/hero-background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    color: white;
+}
+
+.heroSection {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heroSection h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.heroSection p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #e0e0e0;
+}
+
+.heroContainer button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.heroContainer button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.featureHeader {
+    margin-top: 10px;
+    border-bottom: 1px solid var(--color-border);
+    padding: 10px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Layout */
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem;
+    justify-content: center;
+    background-color: var(--color-bg);
+}
+
+.featureCards {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-light);
+    padding: 1.5rem;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: var(--transition);
+}
+
+.featureCards:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .heroContainer {
+        height: auto;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .heroSection {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cardContainer {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .featureCards {
+        width: 100%;
+    }
+
+    footer {
+    font-size: 15px;}
+}

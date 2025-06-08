@@ -1,255 +1,337 @@
 :root {
-    --color-primary: #4f46e5;
-    --color-primary-hover: #4338ca;
+    --color-primary: #0071e3;
+    --color-primary-hover: #005bb5;
     --color-accent: #10b981;
 
-    --dashboard-nav: black;
-    --dashboard-search-btn: #2584ff;
-    --dashboard-search-btn-hover: #1e6acf;
-    --dashboard-search-input: #f0f0f0;
-    --dashboard-search-input-hover: #e0e0e0;
-    --dashboard-search-input-focus: #d0d0d0;
-    --dashboard-search-input-border: #c0c0c0;
-    --dashboard-links: #2584ff;
-    --dashboard-links-hover: #1e6acf; 
-
-    --color-bg-light: #f9fafb;
-    --color-bg-dark: #111827;
+    --color-bg: #f9f9f9;
+    --color-bg-dark: #1c1c1e;
     --color-surface: #ffffff;
 
-    --color-text-primary: #111827;
-    --color-text-secondary: #6b7280;
+    --color-text-primary: #1d1d1f;
+    --color-text-secondary: #6e6e73;
 
-    --color-border: #e5e7eb;
-    --color-error: #ef4444;
+    --color-border: #d2d2d7;
+    --color-error: #ff3b30;
 
-    --font-family: "Poppins", sans-serif;
+    --font-family: "SF Pro Display", "Poppins", sans-serif;
+
+    --radius: 16px;
+    --shadow-light: 0 8px 24px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s ease;
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-smooth: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-    max-width: 1440px;
-    background-color: var(--color-bg-light);
     font-family: var(--font-family);
-    font-size: 16px;
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
     line-height: 1.5;
-}
-main {
-    flex: 1;
-    padding: 20px;
-}
-.dashboardContainer{
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    flex-wrap: wrap;
+    min-height: 100vh;
 }
 
-.milestoneCardContainer{
-    /* border: 2px solid black; */
-    border-bottom: 1px solid;
-    height: 25vh;
-    margin-top: 20px;
+/* Navbar */
+.navBarContainer {
+    height: 4vh;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-bg-dark);
+    box-shadow: var(--shadow-light);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    gap: 1rem;
+}
+
+.searchContainer {
     display: flex;
     flex-direction: row;
-    gap: 1.5rem;
-    overflow-x: auto;
-    overflow-y: hidden;
-    width: 100%;
-    max-width: 100%;
-    min-width: 0;
-}
-.milestoneCardContainer > * {
-    flex: 0 0 auto;
-}
-.milestoneCard{
-    height: 100%;
-    width: 35%;
-    min-width: 250px;
     max-width: 400px;
-    border: 1px solid var(--dashboard-links);
-    border-radius: 8px;
-    background: var(--color-surface);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    display: flex;
-    flex-direction: column;
-}
-.milestoneCardInfo{
-    display: flex;
-    flex-direction: column;
-}
-.milestoneCardInfo h2{
-    display: block;
     width: 100%;
-    text-align: center;
-    padding-top: 5px;
-}
-.milestoneCardInfo ul{
-    list-style: none;
-    padding: 10px;
-}
-.milestoneCardProgress{
-    padding: 10px;
-    border-top: 1px solid #999;
-}
-.progressBar{
-    border: 1px solid black;
-    border-radius: 13px;
-}
-.progressBarFill{
-    border: 4px solid green;
-    width: 75%;
-    border-radius: 10px;
 }
 
-.annoucementCardContainer{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    height: 40vh;
-    overflow: auto;
-    gap: 2rem;
-    width: 100%;
+.searchContainer input {
+    height: 36px;
+    background-color: #f0f0f5;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius) 0 0 var(--radius);
+    padding: 0 1rem;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    transition: border-color 0.2s ease;
+    flex-grow: 1;
 }
-.annoucementCard1, .annoucementCard2{
-    height: 100%;
-    width: 100%;
-    min-width: 200px;
-    border: 1px solid var(--dashboard-links);
-    border-radius: 8px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    background: var(--color-surface);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+
+.searchContainer input:focus {
+    border-color: var(--color-primary);
+    outline: none;
 }
-.annoucementCardInfo{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+.searchContainer button {
+    height: 36px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 0 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
-.annoucementCardButtons{
+
+.searchContainer button:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.accountIcon {
+    margin-left: 40px;
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: var(--color-primary);
+    color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: var(--shadow-light);
+    transition: background-color 0.3s ease;
+}
+
+.accountIcon:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Main Layout */
+main {
     display: flex;
     flex-direction: row;
-    justify-content: end;
-    gap: 10px;
-    margin-top: 10px;
+    width: 100%;
+    min-height: calc(100vh - 64px);
+    /* assuming navbar height */
+    background-color: var(--color-bg);
 }
-.annoucementCardButtons button{
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--dashboard-links);
+
+/* Sidebar */
+.sideBarContainer {
+    position: sticky;
+    top: 64px;
+    /* height of navbar */
+    left: 0;
+    font-size: 1.1rem;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+    border-right: 1px solid var(--color-border);
+    background-color: var(--color-surface);
+    padding: 1rem 1.5rem;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.05);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.sideBarUpperHalf ul,
+.sideBarLowerHalf ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sideBarUpperHalf li,
+.sideBarLowerHalf li {
+    margin-top: 12px;
+}
+
+.sideBarUpperHalf li a, .sideBarLowerHalf li a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    padding: 0.5rem 0.25rem;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+.sideBarUpperHalf li a:hover, .sideBarLowerHalf li a:hover{
+    background-color: var(--color-primary);
     color: white;
+    width: 100%;
+}
+
+/* Lower half sticky */
+.sideBarLowerHalf {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+/* Content Area */
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 3rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    background-color: var(--color-bg);
+}
+
+/* Greeting Message */
+.greetingMessage {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    padding-left: 20px;
+}
+
+/* Milestone Cards */
+.milestoneCardContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 10px;
+    justify-content: center;
+}
+
+.milestoneCard {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-light);
+    transition: box-shadow 0.3s ease;
+}
+
+.milestoneCard:hover {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.milestoneCardInfo ul {
+    list-style: none;
+    padding-top: 1rem;
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Start Course Button */
+.startCourseButton {
+    float: right;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-}
-.annoucementCardButtons button:hover{
-    background-color: var(--dashboard-links-hover);
+    transition: background-color 0.3s ease;
 }
 
-/* Responsive styles */
-@media (max-width: 1440px) {
-    .dashboardContainer {
-        /* Keep flex-direction: row on all screens */
-        flex-direction: row;
-        gap: 1.5rem;
-    }
-
-    .milestoneCardContainer {
-        height: auto;
-        flex-direction: row;
-        gap: 1rem;
-        overflow-x: auto;
-        overflow-y: visible;
-    }
-
-    .milestoneCard {
-        min-width: 0;
-        max-width: 20%;
-        margin-bottom: 1rem;
-    }
-
-    .annoucementCardContainer {
-        height: auto;
-    }
-}
-@media (max-width: 1024px) {
-    .dashboardContainer {
-            flex-direction: row;
-            gap: 1.5rem;
-            flex-wrap: nowrap;
-        }
-    
-        .milestoneCardContainer {
-            height: auto;
-            flex-direction: row;
-            gap: 1rem;
-            overflow-x: auto;
-            overflow-y: visible;
-        }
-    
-        .milestoneCard {
-            min-width: 0;
-            max-width: 20%;
-            margin-bottom: 1rem;
-        }
-    
-        .annoucementCardContainer {
-            height: auto;
-        }
+.startCourseButton:hover {
+    background-color: var(--color-primary-hover);
 }
 
-@media (max-width: 768px) {
-    .dashboardContainer {
-        /* Keep flex-direction: row on all screens */
-        flex-direction: row;
-        gap: 1rem;
-    }
-    .milestoneCardContainer {
+/* Responsive Adjustments */
+/* Small devices (mobiles) */
+@media (max-width: 767px) {
+    main {
         flex-direction: column;
-        gap: 1rem;
-        height: auto;
     }
-    .milestoneCard {
+
+    .sideBarContainer {
         width: 100%;
-        min-width: 0;
-        max-width: 100%;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--color-border);
+        padding: 1rem 1.5rem;
+        box-shadow: none;
+        display: none; /* Hide sidebar by default on mobile */
     }
-    .annoucementCardContainer {
+
+    .sideBarContainer.active {
+        display: flex; /* Show sidebar when toggled */
+    }
+
+    .sideBarLowerHalf {
+        position: relative;
+        bottom: auto;
+        width: 100%;
+        padding-bottom: 0;
+    }
+
+    .contentContainer {
+        padding: 1rem 0.5rem;
         gap: 1rem;
-        height: auto;
+    }
+
+    .greetingMessage {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .milestoneCardContainer {
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .milestoneCard {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .accountIcon {
+        margin-left: 0.5rem;
+        height: 2.2rem;
+        width: 2.2rem;
+        font-size: 1.1rem;
+    }
+
+    .searchContainer {
+        display: none;
+    }
+
+    .navBarContainer {
+        height: 26px; /* Ensure consistent navbar height */
+        padding: 0 0.5rem;
+        gap: 0.5rem;
+        justify-content: center;
     }
 }
 
-@media (max-width: 480px) {
-    .dashboardContainer {
-        /* Keep flex-direction: row on all screens */
+/* Medium devices (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    main {
         flex-direction: row;
-        padding: 0 5px;
     }
-    .milestoneCardContainer {
-        gap: 0.5rem;
-        padding: 0;
+
+    .sideBarContainer {
+        width: 220px;
     }
-    .milestoneCard {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        font-size: 14px;
-    }
-    .annoucementCard1, .annoucementCard2 {
-        padding: 6px;
-        font-size: 14px;
-    }
-    .annoucementCardButtons button {
-        padding: 4px 8px;
-        font-size: 13px;
+
+    .contentContainer {
+        padding: 1.5rem;
+        gap: 1.5rem;
     }
 }
