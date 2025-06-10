@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="../components/css/sideBar.css"> -->
     <link rel="stylesheet" href="../components/css/dashboard.css">
     <link rel="stylesheet" href="../components/css/allStyle.css">
@@ -18,7 +19,9 @@
             <div class="searchContainer">
                 <input type="text" placeholder="Search..." id="searchInput">
                 <button id="searchButton">Search</button>
-                <div class="accountIcon"></div>
+                <div class="accountIcon">
+                    <i class="fas fa-user-circle" style="font-size: 30px; color: #fffdfd;"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -43,46 +46,171 @@
             <div class="greetingMessage">
                 <h1>Welcome to Your Dashboard</h1>
                 <p>Here you can manage your skills, assets, and training folders.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nihil, magni, deleniti autem, maxime non
-                    molestias itaque libero provident obcaecati distinctio.</p>
+                <p>As a new user, you can explore your training modules, track your progress, and develop new skills using this dashboard. </p> 
+                <p>We're excited to have you on board—let's get started on your learning journey!</p>
+                <p>Below are the sets of learning modules to get started as a TechWriter</p>
             </div>
             <div class="milestoneCardContainer">
                 <div class="milestoneCard">
                     <div class="milestoneCardInfo">
-                        <h2>ST4 Basics</h2>
+                        <h2>ST4 Authoring Tool</h2>
                         <ul>
+                            <li>Overview</li>
+                            <li>Introduction</li>
+                            <li>User Interface</li>
+                            <li>Working with Content</li>
+                            <li>Creating Content</li>
                             <li>Variables</li>
-                            <li>Nodes and Projects</li>
-                            <li>Fragments</li>
-                            <li>Import/Export</li>
+                            <li>XML structure and DTD</li>
+                            <li>Graphics and Images</li>
+                            <li>Fragment and Structured Fragments</li>
+                            <li>Reusability Concepts</li>
+                            <li>Dynamic and Static Versioning</li>
+                            <li>Translation Management</li>
                         </ul>
-                        <button class="startCourseButton">Resume</button>
+                        <button class="startCourseButton">View Module</button>
                     </div>
                 </div>
                 <div class="milestoneCard">
                     <div class="milestoneCardInfo">
-                        <h2>ST4 Basics</h2>
+                        <h2>XMetal Editor</h2>
                         <ul>
-                            <li>Variables</li>
-                            <li>Nodes and Projects</li>
+                            <li>Getting Started</li>
+                            <li>Instructions Steps, Tags</li>
+                            <li>Internal/External Links</li>
+                            <li>Paragraphs and Subheadings</li>
+                            <li>Safety Messages</li>
                             <li>Fragments</li>
-                            <li>Import/Export</li>
                         </ul>
-                        <button class="startCourseButton">Resume</button>
+                        <button class="startCourseButton">View Module</button>
                     </div>
                 </div>
                 <div class="milestoneCard">
                     <div class="milestoneCardInfo">
-                        <h2>ST4 Basics</h2>
+                        <h2>Essentials</h2>
                         <ul>
-                            <li>Variables</li>
-                            <li>Nodes and Projects</li>
-                            <li>Fragments</li>
-                            <li>Import/Export</li>
+                            <li>Topic Oriented Writing Basics</li>
+                            <li>10 SiMPL Font Training</li>
+                            <li>Working with Adobe Acrobat Pro</li>
+                            <li>Working with Context Sensitive Help</li>
+                            <li>Contextual Help</li>
                         </ul>
-                        <button class="startCourseButton">Resume</button>
+                        <button class="startCourseButton">View Module</button>
                     </div>
                 </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SID Training</h2>
+                        <ul>
+                            <li>SID Training 1</li>
+                            <li>SID Training 2</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>Assignment</h2>
+                        <ul>
+                            <li>Assignment-1</li>
+                            <li>Assignment-2</li>
+                            <li>Assignment-3</li>
+                            <li>Assignment-4</li>
+                            <li>Assignment-5</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                <!-- <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-1</h2>
+                        <ul>
+                            <li>ST4 Overview</li>
+                            <li>ST4 Introduction</li>
+                            <li>ST4 User Interface</li>
+                            <li>Getting Started with XMetal</li>
+                            <li>Topic Oriented Writing Basics</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-2</h2>
+                        <ul>
+                            <li>ST4 - Working with Content</li>
+                            <li>Xmetal - Instruction Steps tag</li>
+                            <li>XMetal - Working with Internal/External Links</li>
+                            <li>XMetal - Working with Paragraphs and Subheadings</li>
+                            <li>XMetal - Working with safety Messages</li>
+                            <li>ST4 Creating Content</li>
+                            <li>ST4 Working with Variables</li>
+                            <li>ST4 XML structure and DTD</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-3</h2>
+                        <ul>
+                            <li>Working with Graphics and Images</li>
+                            <li style="color: red;">Assignment - Graphics</li>
+                            <li>10 SiMPL Font Training</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-4</h2>
+                        <ul>
+                            <li>Working with Fragment and structured fragment</li>
+                            <li>Working with Fragments - XMetal</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-5</h2>
+                        <ul>
+                            <li>Reusability Concepts in ST4</li>
+                            <li>Working with Projects and Production</li>
+                            <li>Dynamic and Fixed Versioning</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-6</h2>
+                        <ul>
+                            <li>ST4 Translation Management</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-7</h2>
+                        <ul>
+                            <li>Working with Adobe Acrobat Pro</li>
+                            <li>Working with Context Sensitive Help</li>
+                            <li>Contextual Help</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div>
+                <div class="milestoneCard">
+                    <div class="milestoneCardInfo">
+                        <h2>SET-8</h2>
+                        <ul>
+                            <li>SID Training 1</li>
+                            <li>SID Training 2</li>
+                        </ul>
+                        <button class="startCourseButton">View Module</button>
+                    </div>
+                </div> -->
             </div>
     </main>
     </div>
